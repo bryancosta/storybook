@@ -1,0 +1,62 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "config",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/poc-doc-storybook/.storybook/main.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StorybookConfig",
+                "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions', '@storybook/addon-docs', '@storybook/addon-controls'],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "libs/poc-doc-storybook/.storybook/main.ts": [
+                {
+                    "name": "config",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/poc-doc-storybook/.storybook/main.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StorybookConfig",
+                    "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions', '@storybook/addon-docs', '@storybook/addon-controls'],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "libs/poc-doc-storybook/.storybook/main.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "config",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

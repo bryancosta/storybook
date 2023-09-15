@@ -1,0 +1,81 @@
+{
+  "name": "libs/poc-doc-storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/poc-doc-storybook/src",
+  "prefix": "storybook",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/poc-doc-storybook/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/poc-doc-storybook/**/*.ts",
+          "libs/poc-doc-storybook/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/poc-doc-storybook/.storybook",
+        "browserTarget": "libs/poc-doc-storybook:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/libs/poc-doc-storybook",
+        "configDir": "libs/poc-doc-storybook/.storybook",
+        "browserTarget": "libs/poc-doc-storybook:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/poc-doc-storybook/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "libs/poc-doc-storybook:build-storybook",
+        "staticFilePath": "dist/storybook/libs/poc-doc-storybook"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "libs/poc-doc-storybook:build-storybook:ci"
+        }
+      }
+    }
+  }
+}
