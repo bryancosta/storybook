@@ -1,0 +1,104 @@
+import { Meta, Typeset, Subtitle,Preview,Story , Canvas   } from '@storybook/blocks';
+
+<Meta title="Typography" />
+
+export const typography = {
+  type: {
+    primary: '" Proxima Nova Alt", "Helvetica Neue", Helvetica, Arial, sans-serif',
+  },
+  weight: {
+    regular: '400',
+    bold: '700',
+    extrabold: '800',
+    black: '900',
+  },
+  size: {
+    s1: 12,
+    s2: 14,
+    s3: 16,
+    m1: 20,
+    m2: 24,
+    m3: 28,
+    l1: 32,
+    l2: 40,
+    l3: 48,
+  },
+};
+
+export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
+# Typography
+
+**Font:**  Proxima Nova Alt
+
+**Weights:** 400(regular), 700(bold), 800(extrabold), 900(black)
+
+ <Story name="h1" height="50px">
+    {{
+      template: `<h1 class="type-card-headline">Headline 1</h1>`,
+    }}
+  </Story>
+## Desktop
+<Canvas><h1>xxx</h1></Canvas>
+<Typeset
+  fontSizes={[
+    typography.size.s1+'px',
+    Number(typography.size.s2),
+    Number(typography.size.s3),
+    Number(typography.size.m1),
+    Number(typography.size.m2),
+    Number(typography.size.m3),
+    Number(typography.size.l1),
+    Number(typography.size.l2),
+    Number(typography.size.l3),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+   style={{ letterSpacing: "normal", lineHeight: "48px" }}
+/>
+Typography
+ 
+## Tablet 
+<Typeset
+  fontSizes={[
+    12,
+    Number(typography.size.s2),
+    Number(typography.size.s3),
+    Number(typography.size.m1),
+    Number(typography.size.m2),
+    Number(typography.size.m3),
+    Number(typography.size.l1),
+    Number(typography.size.l2),
+    Number(typography.size.l3),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+   style={{ letterSpacing: "normal", lineHeight: "48px" }}
+/>
+
+
+## Mobile
+<Typeset fontSizes={['18px']} sampleText="Headline 3" fontWeight="700" style={{ letterSpacing: '0.15px', lineHeight: '24px'}} />
+<Typeset
+  fontSizes={[
+    typography.size.s1+'px',
+    Number(typography.size.s2),
+    Number(typography.size.s3),
+    Number(typography.size.m1),
+    Number(typography.size.m2),
+    Number(typography.size.m3),
+    Number(typography.size.l1),
+    Number(typography.size.l2),
+    Number(typography.size.l3),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+   style={{ letterSpacing: "normal", lineHeight: "48px" }}
+/>
+
+## Test 
+
+ 
